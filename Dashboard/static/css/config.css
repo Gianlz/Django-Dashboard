@@ -1,0 +1,43 @@
+/* config.css */
+
+/* Overall styles for the config page */
+.config-page {
+    display: flex;
+    height: 100%;
+}
+
+.main-content {
+    flex: 1; /* Takes remaining space */
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.main-content h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.main-content p {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.main-content ul {
+    list-style-type: none;
+}
+
+.main-content ul li {
+    margin-bottom: 10px;
+}
+
+
+
+@media (max-width: 768px) {
+    .config-page {
+        flex-direction: column; /* Stack items vertically on smaller screens */
+    }
+
+}

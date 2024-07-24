@@ -1,0 +1,91 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    background-color: #eee; /* Cor de fundo geral */
+    font-family: 'Segoe UI', sans-serif;
+    overflow: hidden; /* Previne barras de rolagem a menos que o conteúdo ultrapasse */
+}
+
+.side-panel {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 250px; /* Largura do painel lateral */
+    height: 100%;
+    background-color: rgb(228, 228, 228); /* Cor de fundo do painel lateral */
+    color: #333; /* Cor do texto no painel lateral */
+    padding-top: 90px; /* Espaço para evitar que o menu fique muito próximo do topo */
+    padding-left: 23px;
+    transition: transform 0.3s ease; /* Animação suave ao abrir/fechar */
+    transform: translateX(-250px); /* Começa fora da tela */
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); /* Sombra */
+}
+
+.side-panel.open {
+    transform: translateX(0); /* Move para dentro da tela ao abrir */
+}
+
+.side-panel ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.side-panel ul li {
+    margin-bottom: 10px;
+}
+
+.side-panel ul li a {
+    color: #333;
+    text-decoration: none;
+    display: block;
+    padding: 10px;
+    transition: background-color 0.3s ease; /* Animação de fundo ao passar o mouse */
+}
+
+.side-panel ul li a:hover {
+    background-color: #ddd; /* Cor de fundo ao passar o mouse */
+}
+
+.main-content {
+    margin-left: 60px; /* Espaço para o menu toggle */
+    transition: margin-left 0.3s ease;
+    display: flex;
+    height: 100%;
+}
+
+.menu-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 1000; /* Garante que o botão esteja acima de outros conteúdos */
+    background-color: rgb(228, 228, 228); /* Cor de fundo do botão */
+    color: #333; /* Cor do ícone do botão */
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Animação de fundo ao passar o mouse */
+}
+
+.menu-toggle:hover {
+    background-color: #ddd; /* Cor de fundo ao passar o mouse */
+}
+
+.centered-div {
+    flex: 1; /* Ocupa todo o espaço restante */
+    padding: 0px;
+    background-color: #eee; /* Cor de fundo do conteúdo principal */
+    overflow-y: auto; /* Adiciona barras de rolagem quando necessário */
+    transition: margin-left 0.3s ease; /* Animação de margem ao abrir/fechar o menu */
+}
+
+.centered-div.retracted {
+    margin-left: 250px; /* Ajusta a margem quando o painel lateral está aberto */
+}

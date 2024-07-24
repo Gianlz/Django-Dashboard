@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <title> {% block title %} Dashboard {% endblock %} </title>
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> <!-- Font Awesome for icons -->
+</head>
+<body>
+
+    
+    <!-- Side panel -->
+    <div class="side-panel">
+        <ul>
+            <li><a href="{% url 'index' %}">Menu</a></li>
+            <li><a href="">Histórico</a></li>
+            <li><a href="{% url 'configurations' %}">Configurações</a></li>
+        </ul>
+    </div>
+
+    
+    <!-- Main content area -->
+    <div class="main-content">
+        <div class="menu-toggle">
+            <i class="fas fa-bars"></i> <!-- Ícone de menu hamburguer -->
+        </div>
+        {% block content %}
+        <div class="centered-div">
+            {{ section.content }}
+        </div>
+        {% endblock %}
+    </div>
+    
+   
+    <script>
+        const menuToggle = document.querySelector('.menu-toggle');
+        const sidePanel = document.querySelector('.side-panel');
+        const centeredDiv = document.querySelector('.centered-div');
+
+        menuToggle.addEventListener('click', function() {
+            sidePanel.classList.toggle('open');
+            centeredDiv.classList.toggle('retracted');
+        });
+    </script>
+
+</body>
+</html>

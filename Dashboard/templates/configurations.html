@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block title %}Configuration Page{% endblock %}
+
+{% block extra_css %}
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/config.css' %}">
+{% endblock %}
+
+{% block content %}
+    <div class="config-page">
+        <h1>Configuration Page</h1>
+        <p>Here you can configure various settings.</p>
+        <ul>
+            <li>Setting 1</li>
+            <li>Setting 2</li>
+            <li>Setting 3</li>
+        </ul>
+    </div>
+{% endblock %}
+
+{% block extra_js %}
+    <script src="{% static 'js/config.js' %}"></script>
+{% endblock %}
